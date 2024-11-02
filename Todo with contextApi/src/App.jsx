@@ -6,21 +6,24 @@ function App() {
   // todos: array of todos.
   const [todos, setTodos] = useState([]);
 
+  // Add a new todo
   const addTodo = (todo) => {
-    // prev: array of previous Todos
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
   };
 
+  // Update a Todo
   const updateTodo = (id, todo) => {
     setTodos((prev) =>
       prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
     );
   };
 
+  // delete a todo
   const deleteTodo = (id) => {
-    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+    setTodos((prev) => prev.filter((prevTodo) => prevTodo.id !== id));
   };
 
+  // toggle complete
   const toggleComplete = (id) => {
     setTodos((prev) =>
       prev.map((prevTodo) =>
@@ -30,7 +33,6 @@ function App() {
       )
     );
   };
-
   return (
     <TodoProvider
       value={{ todos, addTodo, updateTodo, deleteTodo, toggleComplete }}
