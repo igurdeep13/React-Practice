@@ -2,21 +2,12 @@ import React, { useState } from "react";
 import { useTodo } from "../contexts";
 
 function TodoItem({ todo }) {
-  const { updateTodo, taskCompleted, deleteTodo } = useTodo();
+  // Getting methods from contextAPI
+  const { updateTodo, deleteTodo, taskCompleted } = useTodo();
 
   const [isTodoEditable, setIsTodoEditable] = useState(false);
 
   const [todoMsg, setTodoMsg] = useState(todo.todo);
-
-  // In here, we need all methods(functionalities) execpt addTo which we have defined in todoItem.
-
-  const editTodo = () => {
-    updateTodo(todo.id, { ...todo, todo: todoMsg });
-  };
-
-  const toggleComplete = () => {
-    taskCompleted(todo.id);
-  };
 
   return (
     <div
@@ -28,7 +19,7 @@ function TodoItem({ todo }) {
         type="checkbox"
         className="cursor-pointer"
         checked={todo.completed}
-        onChange={toggleComplete}
+        onChange={toggleCompleted}
       />
       <input
         type="text"
