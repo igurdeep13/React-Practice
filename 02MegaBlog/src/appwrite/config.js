@@ -89,6 +89,32 @@ export class Service {
       return false;
     }
   }
+
+  // FILE-UPLOAD METHOD
+  async uploadFile(file) {
+    try {
+      await this.bucket.createFile(conf.appwriteBucketId, ID.unique(), file);
+    } catch (error) {
+      console.log("Appwrite service :: Fileupload :: error", error);
+      return false;
+    }
+  }
+
+  //DELETE-FILE METHOD
+  async deleteFile(fileId) {
+    try {
+      await this.bucket.deleteFile(conf.appwriteBucketId, fileId);
+      return true;
+    } catch (error) {
+      console.log("Appwrite service :: DeleteFile :: error", error);
+      return false;
+    }
+  }
+
+  //FILE_PREVIEW METHOD
+  getFilePreview(fileId) {
+    return this.bucket.getFilePreview(conf.appwriteBucketId);
+  }
 }
 
 const service = new Service();
