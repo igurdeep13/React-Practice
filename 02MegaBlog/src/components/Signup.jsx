@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
-import { Button, Input, Logo } from "./index.js";
+import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
@@ -49,9 +49,8 @@ function Signup() {
           </Link>
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-
         <form onSubmit={handleSubmit(create)}>
-          <div className="space-y-5">
+          <div className="space-y-4">
             <Input
               label="Full Name: "
               placeholder="Enter your full name"
@@ -73,8 +72,8 @@ function Signup() {
               })}
             />
             <Input
-              label="Password: "
-              type="password"
+              label="Password:"
+              type="Enter your password"
               placeholder="Enter your password"
               {...register("password", {
                 required: true,
