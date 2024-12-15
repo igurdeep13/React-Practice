@@ -20,6 +20,9 @@ const Input = React.forwardRef(function Input(
         {...props}
         id={id}
       />
+      <Button type="submit" className="w-full">
+        Create Account
+      </Button>
     </div>
   );
 });
