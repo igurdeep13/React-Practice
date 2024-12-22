@@ -44,10 +44,26 @@ export class AuthService {
   // Get Current User
   async getCurrentUser() {
     try {
-      return await this.account.get();
+      // Attempt to get the current user's account
+      const user = await this.account.get();
+      return user;
     } catch (error) {
-      console.log("Appwrite service :: getCurrentUser :: error", error);
+      if (error.code === 401) {
+        // Specific handling for unauthorized access
+        console.log("User is not authenticated. Please log in.");
+      } else if (error.code === 403) {
+        // Specific handling for forbidden access (missing scopes)
+        console.log("Access denied. Ensure the user has the required scopes.");
+      } else {
+        // Log any unexpected errors
+        console.log(
+          "Appwrite service :: getCurrentUser :: unexpected error",
+          error
+        );
+      }
     }
+
+    // Return null if no user is authenticated or an error occurs
     return null;
   }
 

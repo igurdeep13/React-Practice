@@ -5,13 +5,14 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "../Pages/Home.jsx";
+import Home from "./Pages/Home.jsx";
 import { AuthLayout, Login } from "./components/index.js";
-import AddPost from "../Pages/AddPost";
-import Signup from "../Pages/Signup";
-import EditPost from "../Pages/EditPost";
-import Post from "../Pages/Post";
-import AllPosts from "../Pages/AllPosts";
+
+import AddPost from "./Pages/AddPost";
+import Signup from "./Pages/Signup";
+import EditPost from "./Pages/EditPost";
+import Post from "./Pages/Post";
+import AllPosts from "./Pages/AddPost";
 
 const router = createBrowserRouter([
   {
@@ -72,8 +73,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
-console.log("index.js is running...");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

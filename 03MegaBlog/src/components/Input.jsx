@@ -5,7 +5,6 @@ const Input = React.forwardRef(function Input(
   ref
 ) {
   const id = useId();
-
   return (
     <div className="w-full">
       {label && (
@@ -20,9 +19,6 @@ const Input = React.forwardRef(function Input(
         {...props}
         id={id}
       />
-      <Button type="submit" className="w-full">
-        Create Account
-      </Button>
     </div>
   );
 });
