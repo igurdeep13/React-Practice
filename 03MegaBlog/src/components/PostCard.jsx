@@ -13,7 +13,7 @@ function PostCard({ $id, title, featuredImage }) {
             className="rounded-t-xl"
           />
         </div>
-        <h2 className="text-xl px-1 font-bold">{title}</h2>
+        <h5 className="text-xl p-2 font-bold text-center">{title}</h5>
       </div>
     </Link>
   );
