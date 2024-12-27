@@ -6,7 +6,6 @@ import { Header, Footer } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
-  // console.log("App jsx is running");
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 

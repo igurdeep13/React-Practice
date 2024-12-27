@@ -19,7 +19,11 @@ function Home() {
         <Container>
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
-              <h1 className="text-2xl font-bold hover:text-gray-500">
+              <h1 className="text-2xl font-bold">
+                Hi There <span className="text-3xl">👋🏼</span>
+              </h1>
+              <h1 className="text-5xl py-2 font-semibold">Welcome to .blog</h1>
+              <h1 className="text-2xl hover:text-gray-500">
                 Login to read posts
               </h1>
             </div>
